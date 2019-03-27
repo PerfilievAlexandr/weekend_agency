@@ -16,4 +16,4 @@ export default (rabbits = initialState, action) => {
         default:
             return rabbits
     }
-}
+};
