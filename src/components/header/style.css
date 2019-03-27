@@ -1,0 +1,14 @@
+
+.header__wrapper {
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+
+    padding-right: 20px;
+
+    background-color: #565656;
+    box-sizing: border-box;
+}
