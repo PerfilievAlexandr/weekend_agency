@@ -10,7 +10,7 @@ export default (rabbits = initialState, action) => {
 
         case LOAD_RABBITS:
             return {
-                rabbits
+                rabbits: payload
             };
 
         default:

@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="898927da-19c5-42dc-bad4-0c6733ffba44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/action-creators/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/authorization.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/selectors/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/authorization/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authorization/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/authorization/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authorization/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navBar/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navBar/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/constants/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/action-creators/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/action-creators/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/creationList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/creationList/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/rabbits.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/rabbits.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -28,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/constants/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="26" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="26" />
+            <state>
+              <caret column="25" selection-start-column="13" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -37,10 +29,31 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/action-creators/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+            <state relative-caret-position="675">
+              <caret line="45" column="26" lean-forward="true" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
               <folding>
-                <element signature="e#0#49#0" expanded="true" />
+                <element signature="e#0#91#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/reducers/rabbits.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/creationList/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -49,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/reducers/authorization.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+            <state>
+              <caret column="60" lean-forward="true" selection-start-column="60" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -67,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/selectors/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            <state relative-caret-position="15">
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -106,7 +119,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/components/navBar/style.css" />
         <option value="$PROJECT_DIR$/src/components/editing/index.js" />
-        <option value="$PROJECT_DIR$/src/components/creationList/index.js" />
         <option value="$PROJECT_DIR$/src/components/creation/index.js" />
         <option value="$PROJECT_DIR$/src/components/header/style.css" />
         <option value="$PROJECT_DIR$/src/App.js" />
@@ -114,16 +126,17 @@
         <option value="$PROJECT_DIR$/src/components/autorization/index.js" />
         <option value="$PROJECT_DIR$/src/store.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/reducers/rabbits.js" />
         <option value="$PROJECT_DIR$/src/constants/index.js" />
         <option value="$PROJECT_DIR$/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/src/components/authorization/style.css" />
         <option value="$PROJECT_DIR$/src/components/header/index.js" />
         <option value="$PROJECT_DIR$/src/components/navBar/index.js" />
         <option value="$PROJECT_DIR$/src/components/authorization/index.js" />
-        <option value="$PROJECT_DIR$/src/action-creators/index.js" />
         <option value="$PROJECT_DIR$/src/reducers/authorization.js" />
         <option value="$PROJECT_DIR$/src/selectors/index.js" />
+        <option value="$PROJECT_DIR$/src/components/creationList/index.js" />
+        <option value="$PROJECT_DIR$/src/action-creators/index.js" />
+        <option value="$PROJECT_DIR$/src/reducers/rabbits.js" />
       </list>
     </option>
   </component>
@@ -164,6 +177,19 @@
               <item name="weekend_agency" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weekend_agency" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weekend_agency" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="creationList" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="weekend_agency" type="b2602c69:ProjectViewProjectNode" />
+              <item name="weekend_agency" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -210,12 +236,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1553711686227</updated>
-      <workItem from="1553711687469" duration="11286000" />
+      <workItem from="1553711687469" duration="12966000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11286000" />
+    <option name="totallyTimeSpent" value="12966000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -292,13 +318,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/creationList/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/navBar/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -337,13 +356,6 @@
           <folding>
             <element signature="e#0#51#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/rabbits.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -393,8 +405,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/constants/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="26" />
+        <state>
+          <caret column="25" selection-start-column="13" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/selectors/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -408,27 +427,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/action-creators/index.js">
+    <entry file="file://$PROJECT_DIR$/src/reducers/authorization.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        <state>
+          <caret column="60" lean-forward="true" selection-start-column="60" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/creationList/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
-            <element signature="e#0#49#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/authorization.js">
+    <entry file="file://$PROJECT_DIR$/src/action-creators/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+        <state relative-caret-position="675">
+          <caret line="45" column="26" lean-forward="true" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#91#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/selectors/index.js">
+    <entry file="file://$PROJECT_DIR$/src/reducers/rabbits.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="270">
+          <caret line="18" column="2" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
         </state>
       </provider>
     </entry>

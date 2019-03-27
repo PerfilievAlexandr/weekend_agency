@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {getRabbits} from '../../action-creators';
+import {token} from '../../selectors';
 
 class CreationList extends Component {
 
@@ -6,11 +9,25 @@ class CreationList extends Component {
         return (
            <div>
                creationList
+               <button
+                   onClick = {this.onHandleClick}
+               >заполучить кроликов</button>
            </div>
         );
+    };
+
+    onHandleClick = () => {
+        const {getRabbits, tokenData} = this.props;
+
+        getRabbits(tokenData);
     };
 
 }
 
 
-export default CreationList
+export default connect(
+    (store) => ({
+        tokenData: token(store)
+    }),
+    {getRabbits}
+)(CreationList)

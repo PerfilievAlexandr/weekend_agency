@@ -1,7 +1,8 @@
 import {
     OPEN_AUTHORIZATION,
-    AUTHORIZATION
-} from '../constants'
+    AUTHORIZATION,
+    LOAD_RABBITS
+} from '../constants';
 
 export function OpenCloseAuthorization() {
     return {
@@ -31,6 +32,29 @@ export function authorize(personalData) {
                     type: AUTHORIZATION,
                     payload: token
                 });
-            })
+            });
+    };
+}
+
+export function getRabbits(tokenData) {
+
+    return (dispatch) => {
+        console.log(tokenData, 'token data');
+
+        fetch('http://conquest.weekendads.ru/rabbit/list', {
+                method: "GET",
+                headers: {
+                    'Authorization': 'Bearer ' + tokenData,
+                }
+            }
+        )
+            .then((response) => response.json())
+            .then((rabbits) => {
+                console.log(rabbits);
+                dispatch({
+                    type: LOAD_RABBITS,
+                    payload: rabbits
+                });
+            });
     };
 }
