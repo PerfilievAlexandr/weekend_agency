@@ -1,0 +1,1 @@
+export const LOAD_RABBITS = 'LOAD_RABBITS';
