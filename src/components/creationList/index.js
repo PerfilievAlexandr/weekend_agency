@@ -2,31 +2,36 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getRabbits} from '../../action-creators';
 import {token, rabbitsList} from '../../selectors';
-import Rabbit from '../rabbit'
+import Rabbit from '../rabbit';
+import './style.css';
 
 class CreationList extends Component {
 
     render() {
-        
-        const {rabbitsData} = this.props;  
+
+        const {rabbitsData} = this.props;
 
         const rabbits = rabbitsData.map((rabbit) => {
-            return <li key = {rabbit.id} >
-                <Rabbit 
-                    rabbit = {rabbit}
+            return <li
+                key={rabbit.id}
+                className='rabbitsList__item'
+            >
+                <Rabbit
+                    rabbit={rabbit}
                 />
-            </li> 
+            </li>
         })
 
         const rabbitList = (rabbitsData.length > 0) ? rabbits : null;
 
         return (
-           <div>
-               <button
-                   onClick = {this.onHandleClick}
-               >заполучить кроликов</button>
-               {rabbitList}
-           </div>
+            <div className='rabbitsList'>
+                <button
+                    onClick={this.onHandleClick}
+                >заполучить кроликов
+                </button>
+                {rabbitList}
+            </div>
         );
     };
 

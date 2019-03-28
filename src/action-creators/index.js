@@ -1,7 +1,8 @@
 import {
     OPEN_AUTHORIZATION,
     AUTHORIZATION,
-    LOAD_RABBITS
+    LOAD_RABBITS,
+    CREATE_RABBIT
 } from '../constants';
 
 export function OpenCloseAuthorization() {
@@ -54,6 +55,34 @@ export function getRabbits(tokenData) {
                 dispatch({
                     type: LOAD_RABBITS,
                     payload: rabbits
+                });
+            });
+    };
+}
+
+
+export function createRabbit(newRabbit, token) {
+
+
+    return (dispatch) => {
+        const data = new URLSearchParams();
+        data.append('rabbit[name]', newRabbit.name);
+        data.append('rabbit[weight]', newRabbit.weight);
+
+        fetch('http://conquest.weekendads.ru/rabbit', {
+                method: "POST",
+                headers: {
+                    'Authorization': 'Bearer ' + token,
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: data
+            }
+        )
+            .then((response) => response.json())
+            .then((rabbit) => {
+                dispatch({
+                    type: CREATE_RABBIT,
+                    payload: rabbit
                 });
             });
     };

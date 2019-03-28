@@ -9,9 +9,9 @@ class Rabbit extends Component {
 
         return (
            <div className = 'rabbit'>
-               <p className = 'rabbit__id'>{rabbit.id}</p>
-               <p className = 'rabbit__name'>{rabbit.name}</p>
-               <p className = 'rabbit__weight'>{rabbit.weight}</p>
+               <p className = 'rabbit__id'>id: {rabbit.id}</p>
+               <p className = 'rabbit__name'>Имя: {rabbit.name}</p>
+               <p className = 'rabbit__weight'>Вес: {rabbit.weight}</p>
            </div>
         );
     };
