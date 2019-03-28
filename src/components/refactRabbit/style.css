@@ -1,4 +1,18 @@
-.rabbit {
-    display: flex;
-    flex-direction: column;
+
+.refactRabbit {
+    margin-bottom: 50px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.refactRabbit label {
+    margin-right: 20px;
+}
+
+.refactRabbit input {
+    margin-left: 20px;
+    padding: 10px;
+
+    font-size: 15px;
 }

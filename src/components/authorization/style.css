@@ -14,16 +14,19 @@
 }
 
 .authorization__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     position: fixed;
-    top: 20px;
+    top: 20%;
     left: 50%;
     transform: translateX(-50%);
     padding: 20px;
 
     box-sizing: border-box;
-    width: 90%;
-    height: 95%;
-    overflow: auto;
+    width: 50%;
 
     background-color: gainsboro;
 }
@@ -31,11 +34,54 @@
 .authorization__close {
     position: relative;
     content: "";
-    top: -20px;
-    left: 98%;
+    top: -60px;
+    left: 56%;
+    cursor: pointer;
 
     width: 35px;
     height: 35px;
 
     font-size: 0;
+    background: none;
+    border: none;
+}
+
+.authorization__close:before {
+    position: absolute;
+    content: '';
+    top: 14px;
+    left: -9px;
+    width: 50px;
+    height: 5px;
+
+    transform: rotate(45deg);
+    background-color: white;
+}
+
+.authorization__close:after {
+    position: absolute;
+    content: '';
+    top: 14px;
+    left: -9px;
+    width: 50px;
+    height: 5px;
+
+    transform: rotate(-45deg);
+    background-color: white;
+}
+
+
+.authorization__title {
+    text-align: center;
+}
+
+.authorization__container label {
+    margin-bottom: 25px;
+}
+
+.authorization__container input {
+    margin-left: 20px;
+    padding: 10px;
+
+    font-size: 15px;
 }

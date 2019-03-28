@@ -3,6 +3,7 @@ import {AUTHORIZATION, OPEN_AUTHORIZATION} from '../constants';
 const initialState = {
     token: '',
     open: false,
+    logIn: false
 };
 
 export default (authorization = initialState, action) => {
@@ -11,7 +12,7 @@ export default (authorization = initialState, action) => {
     switch (type) {
 
         case AUTHORIZATION:
-            return {...authorization, token: payload.token};
+            return {...authorization, token: payload.token,  logIn: !authorization.logIn};
 
         case OPEN_AUTHORIZATION:
             return {...authorization, open: !authorization.open};

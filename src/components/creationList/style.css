@@ -1,10 +1,45 @@
 .rabbitsList {
-    width: 20%;
+    background-color: lightgray;
+    height: 100vh;
+
+    padding-top: 50px;
+}
+
+.rabbitsList__wrapper {
+
+    width: 60%;
+    min-height: 200px;
     margin: 0 auto;
+    padding: 50px;
+
+    box-shadow: 0 0 10px #565656;
+    background-color: white;
+    text-align: center;
+}
+
+.rabbitsList__rabbits-container {
+    display: flex;
     margin-top: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 
 .rabbitsList__item {
+    width: 30%;
+    box-sizing: border-box;
+    margin-right: 20px;
+    padding: 20px;
+
     list-style: none;
+
+    border: 2px solid gray;
+
+
+}
+
+.rabbitsList__title {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 50px;
 }

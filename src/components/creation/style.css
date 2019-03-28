@@ -1,0 +1,34 @@
+.creation-rabbit {
+    background-color: lightgray;
+    height: 100vh;
+
+    padding-top: 50px;
+}
+
+.creation-rabbit__wrapper {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 60%;
+    min-height: 200px;
+    margin: 0 auto;
+    padding: 50px;
+
+    box-shadow: 0 0 10px #565656;
+    background-color: white;
+    text-align: center;
+}
+
+.creation-rabbit label {
+    margin-bottom: 25px;
+}
+
+.creation-rabbit input {
+    margin-left: 20px;
+    padding: 10px;
+
+    font-size: 15px;
+}

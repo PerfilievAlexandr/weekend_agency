@@ -3,6 +3,7 @@ import './style.css'
 import {connect} from "react-redux";
 import {token} from "../../selectors";
 import {refactSelectRabbit} from "../../action-creators";
+import {numbers} from '../../utils'
 
 class RefactRabbit extends Component {
 
@@ -16,39 +17,42 @@ class RefactRabbit extends Component {
         const {rabbit} = this.props;
 
         return (
-            <div className='refactRabbit'>
-                <p className='refactRabbit__title'>Отредактируем кролика по имени: {rabbit.name},
-                    весом: {rabbit.weight} </p>
-                <label htmlFor="refactRabbitName">
-                    новое имя:
-                    <input
-                        type="text"
-                        placeholder='имя'
-                        name='refactRabbitName'
-                        id='refactRabbitName'
-                        value={this.state.name}
-                        onChange={this.onHandleChangeName}
-                    />
-                </label>
-                <label htmlFor="refactRabbitWeight">
-                    новый вес
-                    <input
-                        type="text"
-                        placeholder='имя'
-                        name='refactRabbitWeight'
-                        id='refactRabbitWeight'
-                        value={this.state.weight}
-                        onChange={this.onHandleChangeWeight}
-                    />
-                </label>
-                <button
-                    type='submit'
-                    className="refactRabbit__sent  btn"
-                    onClick={this.onRefactRabbit}
-                >
-                    Отредактировать
-                </button>
-            </div>
+            <section className='refactRabbit'>
+                <div className='refactRabbit__wrapper'>
+                    <h3 className='refactRabbit__title'>Отредактируем кролика по имени: {rabbit.name},
+                        весом: {rabbit.weight} </h3>
+                    <label htmlFor="refactRabbitName">
+                        новое имя:
+                        <input
+                            type="text"
+                            placeholder='имя'
+                            name='refactRabbitName'
+                            id='refactRabbitName'
+                            value={this.state.name}
+                            onChange={this.onHandleChangeName}
+                        />
+                    </label>
+                    <label htmlFor="refactRabbitWeight">
+                        новый вес
+                        <input
+                            type="text"
+                            placeholder='вес'
+                            name='refactRabbitWeight'
+                            id='refactRabbitWeight'
+                            value={this.state.weight}
+                            onChange={this.onHandleChangeWeight}
+                        />
+                    </label>
+                    <button
+                        type='submit'
+                        className="refactRabbit__sent  btn"
+                        onClick={this.onRefactRabbit}
+                    >
+                        Отредактировать
+                    </button>
+                </div>
+            </section>
+
         );
     };
 
@@ -60,7 +64,7 @@ class RefactRabbit extends Component {
 
     onHandleChangeWeight = (evt) => {
         this.setState({
-            weight: evt.target.value
+            weight: numbers(evt.target.value)
         })
     };
 

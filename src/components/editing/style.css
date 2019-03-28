@@ -1,0 +1,28 @@
+.editing-rabbit {
+    background-color: lightgray;
+    height: 100vh;
+
+    padding-top: 50px;
+}
+
+.editing-rabbit__wrapper {
+
+    width: 60%;
+    min-height: 200px;
+    margin: 0 auto;
+    padding: 50px;
+
+    box-shadow: 0 0 10px #565656;
+    background-color: white;
+    text-align: center;
+}
+
+.editing-rabbit__title {
+    text-align: center;
+    margin: 0;
+    margin-bottom: 50px;
+}
+
+.editing-rabbit__item {
+    list-style: none;
+}

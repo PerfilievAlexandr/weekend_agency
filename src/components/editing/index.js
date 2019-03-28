@@ -13,6 +13,7 @@ class Editing extends Component {
 
         const rabbitsList = rabbits.map((rabbit) => {
             return <li
+                className='editing-rabbit__item'
                 key={rabbit.id}
             >
                 <RefactRabbit
@@ -21,10 +22,19 @@ class Editing extends Component {
             </li>
         });
 
+        const rabbitsLoaded = (rabbits.length > 0) ?
+            rabbitsList
+            :
+            <h3
+                className='editing-rabbit__title'
+            >Обновите список кроликов</h3>;
+
         return (
-            <div className='editing-rabbit'>
-                {rabbitsList}
-            </div>
+            <section className='editing-rabbit'>
+                <div className='editing-rabbit__wrapper'>
+                    {rabbitsLoaded}
+                </div>
+            </section>
         );
     };
 }

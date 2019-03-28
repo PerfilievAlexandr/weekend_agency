@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getRabbits} from '../../action-creators';
-import {token, rabbitsList} from '../../selectors';
+import {token, rabbitsList, logIn} from '../../selectors';
 import Rabbit from '../rabbit';
 import './style.css';
 
@@ -9,7 +9,7 @@ class CreationList extends Component {
 
     render() {
 
-        const {rabbitsData} = this.props;
+        const {rabbitsData, log} = this.props;
 
         const rabbits = rabbitsData.map((rabbit) => {
             return <li
@@ -20,18 +20,31 @@ class CreationList extends Component {
                     rabbit={rabbit}
                 />
             </li>
-        })
+        });
+
+        let main = log ?
+            <button
+                className='rabbitsList__refresh  btn'
+                onClick={this.onHandleClick}
+            >Обновить кроликов
+            </button>
+            :
+            <h3
+                className='rabbitsList__title'
+            >Для начала зарегистрируйтесь</h3>;
 
         const rabbitList = (rabbitsData.length > 0) ? rabbits : null;
 
         return (
-            <div className='rabbitsList'>
-                <button
-                    onClick={this.onHandleClick}
-                >заполучить кроликов
-                </button>
-                {rabbitList}
-            </div>
+            <section className='rabbitsList'>
+                <div className='rabbitsList__wrapper'>
+                    {main}
+                    <div className='rabbitsList__rabbits-container'>
+                        {rabbitList}
+                    </div>
+                </div>
+            </section>
+
         );
     };
 
@@ -47,7 +60,8 @@ class CreationList extends Component {
 export default connect(
     (store) => ({
         tokenData: token(store),
-        rabbitsData: rabbitsList(store)
+        rabbitsData: rabbitsList(store),
+        log: logIn(store)
     }),
     {getRabbits}
 )(CreationList)

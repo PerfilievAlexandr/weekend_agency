@@ -3,6 +3,7 @@ import './style.css';
 import {connect} from 'react-redux';
 import {createRabbit} from '../../action-creators';
 import {token} from "../../selectors";
+import {numbers} from '../../utils'
 
 class Creation extends Component {
 
@@ -13,39 +14,41 @@ class Creation extends Component {
 
     render() {
         return (
-           <div className='creation-rabbit'>
-               <h2 className='creation-rabbit__title'>Создадим кролика</h2>
-               <label htmlFor="creationRabbitName">Имя
-                   <input
-                       type="text"
-                       onChange={this.onHandleChangeName}
-                       id='creationRabbitName'
-                       name='creationRabbitName'
-                       value={this.state.name}
-                       placeholder='Введите имя'
-                       required
-                   />
-               </label>
-               <label htmlFor="creationRabbitWeight">Вес
-                   <input
-                       type="text"
-                       onChange={this.onHandleChangeWeight}
-                       id='creationRabbitWeight'
-                       name='creationRabbitWeight'
-                       value={this.state.weight}
-                       placeholder='Введите вес'
-                       required
-                   />
-               </label>
+           <section className='creation-rabbit'>
+               <div className='creation-rabbit__wrapper'>
+                   <h2 className='creation-rabbit__title'>Создадим кролика</h2>
+                   <label htmlFor="creationRabbitName">Имя
+                       <input
+                           type="text"
+                           onChange={this.onHandleChangeName}
+                           id='creationRabbitName'
+                           name='creationRabbitName'
+                           value={this.state.name}
+                           placeholder='Введите имя'
+                           required
+                       />
+                   </label>
+                   <label htmlFor="creationRabbitWeight">Вес
+                       <input
+                           type="text"
+                           onChange={this.onHandleChangeWeight}
+                           id='creationRabbitWeight'
+                           name='creationRabbitWeight'
+                           value={this.state.weight}
+                           placeholder='Введите вес'
+                           required
+                       />
+                   </label>
 
-               <button
-                   type='submit'
-                   className="creation-rabbit__sent  btn"
-                   onClick={this.onCreateRabbit}
-               >
-                   Создать
-               </button>
-           </div>
+                   <button
+                       type='submit'
+                       className="creation-rabbit__sent  btn"
+                       onClick={this.onCreateRabbit}
+                   >
+                       Создать
+                   </button>
+               </div>
+           </section>
         );
     };
 
@@ -56,8 +59,9 @@ class Creation extends Component {
     };
 
     onHandleChangeWeight = (evt) => {
+
         this.setState({
-            weight: evt.target.value
+            weight: numbers(evt.target.value)
         })
     };
 
