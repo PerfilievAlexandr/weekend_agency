@@ -2,7 +2,8 @@ import {
     OPEN_AUTHORIZATION,
     AUTHORIZATION,
     LOAD_RABBITS,
-    CREATE_RABBIT
+    CREATE_RABBIT,
+    REFACT_RABBIT
 } from '../constants';
 
 export function OpenCloseAuthorization() {
@@ -40,8 +41,7 @@ export function authorize(personalData) {
 export function getRabbits(tokenData) {
 
     return (dispatch) => {
-        console.log(tokenData, 'token data');
-
+        console.log('get rabbits');
         fetch('http://conquest.weekendads.ru/rabbit/list', {
                 method: "GET",
                 headers: {
@@ -82,6 +82,62 @@ export function createRabbit(newRabbit, token) {
             .then((rabbit) => {
                 dispatch({
                     type: CREATE_RABBIT,
+                    payload: rabbit
+                });
+            })
+    };
+}
+
+export function refactSelectRabbit(refactRabbit, rabbitId,  token) {
+
+    return (dispatch) => {
+        const data = new URLSearchParams();
+        data.append('rabbit[name]', refactRabbit.name);
+        data.append('rabbit[weight]', refactRabbit.weight);
+
+        fetch(`http://conquest.weekendads.ru/rabbit/${rabbitId}`, {
+                method: "POST",
+                headers: {
+                    'Authorization': 'Bearer ' + token,
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: data
+            }
+        )
+            .then((response) => response.json())
+            .then((rabbit) => {
+                console.log(rabbit);
+                dispatch({
+                    type: REFACT_RABBIT,
+                    payload: rabbit
+                });
+            })
+    };
+
+}
+
+export function deleteRabbit(rabbit, token) {
+
+    return (dispatch) => {
+
+        const data = new URLSearchParams();
+        data.append('rabbit[name]', rabbit.name);
+        data.append('rabbit[weight]', rabbit.weight);
+
+        fetch(`http://conquest.weekendads.ru/rabbit/${rabbit.id}`, {
+                method: "DELETE",
+                headers: {
+                    'Authorization': 'Bearer ' + token,
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: data
+            }
+        )
+            .then((response) => response.json())
+            .then((rabbit) => {
+                console.log(rabbit);
+                dispatch({
+                    type: REFACT_RABBIT,
                     payload: rabbit
                 });
             });

@@ -43,7 +43,7 @@ class Creation extends Component {
                    className="creation-rabbit__sent  btn"
                    onClick={this.onCreateRabbit}
                >
-                   Войти
+                   Создать
                </button>
            </div>
         );

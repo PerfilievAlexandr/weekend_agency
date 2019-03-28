@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
-import './style.css'
+import './style.css';
+import {deleteRabbit} from '../../action-creators';
+import {connect} from "react-redux";
+import {token} from "../../selectors";
+
 
 class Rabbit extends Component {
 
@@ -12,11 +16,22 @@ class Rabbit extends Component {
                <p className = 'rabbit__id'>id: {rabbit.id}</p>
                <p className = 'rabbit__name'>Имя: {rabbit.name}</p>
                <p className = 'rabbit__weight'>Вес: {rabbit.weight}</p>
+               <button
+                   onClick={this.onDeleteRabbit}
+               >удалить</button>
            </div>
         );
     };
 
+    onDeleteRabbit = () => {
+        const {rabbit, deleteRabbit, tokenData} = this.props;
+        deleteRabbit(rabbit, tokenData)
+    }
 }
 
-
-export default Rabbit
+export default connect(
+    (store) => ({
+        tokenData: token(store),
+    }),
+    {deleteRabbit}
+)(Rabbit)
