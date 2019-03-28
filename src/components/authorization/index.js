@@ -97,4 +97,4 @@ class Authorization extends Component {
 }
 
 
-export default connect((store) => ({}), {OpenCloseAuthorization, authorize})(Authorization)
+export default connect(null, {OpenCloseAuthorization, authorize})(Authorization)

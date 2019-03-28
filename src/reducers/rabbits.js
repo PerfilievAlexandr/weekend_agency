@@ -1,18 +1,12 @@
 import {LOAD_RABBITS} from '../constants';
 
-
-const initialState = [];
-
-export default (rabbits = initialState, action) => {
+export default (rabbits = [], action) => {
     const {type, payload} = action;
 
     switch (type) {
 
         case LOAD_RABBITS:
-            return {
-                rabbits: payload
-            };
-
+            return rabbits = payload
         default:
             return rabbits
     }
