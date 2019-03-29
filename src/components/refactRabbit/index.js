@@ -22,7 +22,7 @@ class RefactRabbit extends Component {
                     <h3 className='refactRabbit__title'>Отредактируем кролика по имени: {rabbit.name},
                         весом: {rabbit.weight} </h3>
                     <label htmlFor="refactRabbitName">
-                        новое имя:
+                        <strong>новое имя:</strong>
                         <input
                             type="text"
                             placeholder='имя'
@@ -33,7 +33,7 @@ class RefactRabbit extends Component {
                         />
                     </label>
                     <label htmlFor="refactRabbitWeight">
-                        новый вес
+                        <strong>новый вес:</strong>
                         <input
                             type="text"
                             placeholder='вес'

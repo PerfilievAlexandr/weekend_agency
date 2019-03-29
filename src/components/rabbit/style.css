@@ -1,4 +1,9 @@
 .rabbit {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+}
+
+.rabbit__delete {
+    margin-top: auto;
 }

@@ -14,9 +14,9 @@ class Rabbit extends Component {
         return (
            <div className = 'rabbit'>
                <div className='rabbit__wrapper'>
-                   <p className = 'rabbit__id'>id: {rabbit.id}</p>
-                   <p className = 'rabbit__name'>Имя: {rabbit.name}</p>
-                   <p className = 'rabbit__weight'>Вес: {rabbit.weight}</p>
+                   <p className = 'rabbit__id'><strong>id:</strong> {rabbit.id}</p>
+                   <p className = 'rabbit__name'><strong>Имя:</strong> {rabbit.name}</p>
+                   <p className = 'rabbit__weight'><strong>Вес:</strong> {rabbit.weight}</p>
                </div>
                <button
                    className='rabbit__delete  btn'

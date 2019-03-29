@@ -34,6 +34,9 @@ export function authorize(personalData) {
                     type: AUTHORIZATION,
                     payload: token
                 });
+            })
+            .catch((error) => {
+                console.log(error)
             });
     };
 }
@@ -56,13 +59,15 @@ export function getRabbits(tokenData) {
                     type: LOAD_RABBITS,
                     payload: rabbits
                 });
+            })
+            .catch((error) => {
+                console.log(error)
             });
     };
 }
 
 
 export function createRabbit(newRabbit, token) {
-
 
     return (dispatch) => {
         const data = new URLSearchParams();
@@ -85,6 +90,10 @@ export function createRabbit(newRabbit, token) {
                     payload: rabbit
                 });
             })
+            .then(() => getRabbits(token))
+            .catch((error) => {
+                console.log(error)
+            });
     };
 }
 
@@ -112,6 +121,9 @@ export function refactSelectRabbit(refactRabbit, rabbitId,  token) {
                     payload: rabbit
                 });
             })
+            .catch((error) => {
+                console.log(error)
+            });
     };
 
 }
@@ -140,6 +152,9 @@ export function deleteRabbit(rabbit, token) {
                     type: REFACT_RABBIT,
                     payload: rabbit
                 });
+            })
+            .catch((error) => {
+                console.log(error)
             });
     };
 }

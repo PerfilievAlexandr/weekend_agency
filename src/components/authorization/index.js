@@ -22,7 +22,7 @@ class Authorization extends Component {
                     >закрыть
                     </button>
                     <h2 className='authorization__title'>Авторизация</h2>
-                    <label htmlFor="authorizationName">Логин
+                    <label htmlFor="authorizationName"><strong>Логин</strong>
                         <input
                             type="text"
                             onChange={this.onHandleChangeName}
@@ -33,7 +33,7 @@ class Authorization extends Component {
                             required
                         />
                     </label>
-                    <label htmlFor="movieFormIDTitle">Пароль
+                    <label htmlFor="movieFormIDTitle"><strong>Пароль</strong>
                         <input
                             type="text"
                             onChange={this.onHandleChangePass}

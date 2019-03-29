@@ -17,7 +17,7 @@ class Creation extends Component {
            <section className='creation-rabbit'>
                <div className='creation-rabbit__wrapper'>
                    <h2 className='creation-rabbit__title'>Создадим кролика</h2>
-                   <label htmlFor="creationRabbitName">Имя
+                   <label htmlFor="creationRabbitName"><strong>Имя</strong>
                        <input
                            type="text"
                            onChange={this.onHandleChangeName}
@@ -28,7 +28,7 @@ class Creation extends Component {
                            required
                        />
                    </label>
-                   <label htmlFor="creationRabbitWeight">Вес
+                   <label htmlFor="creationRabbitWeight"><strong>Вес</strong>
                        <input
                            type="text"
                            onChange={this.onHandleChangeWeight}
