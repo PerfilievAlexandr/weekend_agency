@@ -6,6 +6,17 @@ import {
     REFACT_RABBIT
 } from '../constants';
 
+const status = (response) => {
+    if (response.status !== 200) {
+        return Promise.reject(new Error(response.statusText))
+    }
+    return Promise.resolve(response)
+}
+
+const json = (response) => {
+    return response.json()
+}
+
 export function OpenCloseAuthorization() {
     return {
         type: OPEN_AUTHORIZATION,
@@ -27,7 +38,8 @@ export function authorize(personalData) {
                 })
             }
         )
-            .then((response) => response.json())
+            .then(status)
+            .then(json)
             .then((token) => {
                 console.log(token);
                 dispatch({
@@ -52,7 +64,8 @@ export function getRabbits(tokenData) {
                 }
             }
         )
-            .then((response) => response.json())
+        .then(status)
+        .then(json)
             .then((rabbits) => {
                 console.log(rabbits);
                 dispatch({
@@ -83,14 +96,14 @@ export function createRabbit(newRabbit, token) {
                 body: data
             }
         )
-            .then((response) => response.json())
+            .then(status)
+            .then(json)
             .then((rabbit) => {
                 dispatch({
                     type: CREATE_RABBIT,
                     payload: rabbit
                 });
             })
-            .then(() => getRabbits(token))
             .catch((error) => {
                 console.log(error)
             });
@@ -113,7 +126,8 @@ export function refactSelectRabbit(refactRabbit, rabbitId,  token) {
                 body: data
             }
         )
-            .then((response) => response.json())
+            .then(status)
+            .then(json)
             .then((rabbit) => {
                 console.log(rabbit);
                 dispatch({
@@ -145,7 +159,8 @@ export function deleteRabbit(rabbit, token) {
                 body: data
             }
         )
-            .then((response) => response.json())
+            .then(status)
+            .then(json)
             .then((rabbit) => {
                 console.log(rabbit);
                 dispatch({
