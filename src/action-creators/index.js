@@ -3,11 +3,12 @@ import {
     AUTHORIZATION,
     LOAD_RABBITS,
     CREATE_RABBIT,
-    REFACT_RABBIT
+    REFACT_RABBIT,
+    DELETE_RABBIT
 } from '../constants';
 
 const status = (response) => {
-    if (response.status !== 200) {
+    if (!response.ok) {
         return Promise.reject(new Error(response.statusText))
     }
     return Promise.resolve(response)
@@ -47,27 +48,28 @@ export function authorize(personalData) {
                     payload: token
                 });
             })
+            //.then(getRabbits(token)(dispatch))
             .catch((error) => {
                 console.log(error)
             });
     };
 }
 
-export function getRabbits(tokenData) {
+export function getRabbits() {
 
-    return (dispatch) => {
-        console.log('get rabbits');
+    return (dispatch, getState) => {
+        const token = getState().authorization.token;
         fetch('http://conquest.weekendads.ru/rabbit/list', {
                 method: "GET",
                 headers: {
-                    'Authorization': 'Bearer ' + tokenData,
+                    'Authorization': 'Bearer ' + token,
                 }
             }
         )
         .then(status)
         .then(json)
             .then((rabbits) => {
-                console.log(rabbits);
+                console.log(rabbits, 'new list');
                 dispatch({
                     type: LOAD_RABBITS,
                     payload: rabbits
@@ -80,9 +82,10 @@ export function getRabbits(tokenData) {
 }
 
 
-export function createRabbit(newRabbit, token) {
+export function createRabbit(newRabbit) {
 
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const token = getState().authorization.token;
         const data = new URLSearchParams();
         data.append('rabbit[name]', newRabbit.name);
         data.append('rabbit[weight]', newRabbit.weight);
@@ -98,21 +101,24 @@ export function createRabbit(newRabbit, token) {
         )
             .then(status)
             .then(json)
-            .then((rabbit) => {
+            .then(() => {
+                console.log(newRabbit)
                 dispatch({
                     type: CREATE_RABBIT,
-                    payload: rabbit
+                    payload: newRabbit
                 });
             })
+            .then(getRabbits()(dispatch, getState))
             .catch((error) => {
                 console.log(error)
             });
     };
 }
 
-export function refactSelectRabbit(refactRabbit, rabbitId,  token) {
+export function refactSelectRabbit(refactRabbit, rabbitId) {
 
-    return (dispatch) => {
+    return (dispatch, getState) => {
+        const token = getState().authorization.token;
         const data = new URLSearchParams();
         data.append('rabbit[name]', refactRabbit.name);
         data.append('rabbit[weight]', refactRabbit.weight);
@@ -128,11 +134,13 @@ export function refactSelectRabbit(refactRabbit, rabbitId,  token) {
         )
             .then(status)
             .then(json)
-            .then((rabbit) => {
-                console.log(rabbit);
+            .then(() => {
                 dispatch({
                     type: REFACT_RABBIT,
-                    payload: rabbit
+                    payload: {
+                        id: rabbitId,
+                        refactRabbit: refactRabbit
+                    }
                 });
             })
             .catch((error) => {
@@ -142,10 +150,10 @@ export function refactSelectRabbit(refactRabbit, rabbitId,  token) {
 
 }
 
-export function deleteRabbit(rabbit, token) {
+export function deleteRabbit(rabbit) {
 
-    return (dispatch) => {
-
+    return (dispatch, getState) => {
+        const token = getState().authorization.token;
         const data = new URLSearchParams();
         data.append('rabbit[name]', rabbit.name);
         data.append('rabbit[weight]', rabbit.weight);
@@ -162,10 +170,9 @@ export function deleteRabbit(rabbit, token) {
             .then(status)
             .then(json)
             .then((rabbit) => {
-                console.log(rabbit);
                 dispatch({
-                    type: REFACT_RABBIT,
-                    payload: rabbit
+                    type: DELETE_RABBIT,
+                    payload: rabbit.id
                 });
             })
             .catch((error) => {

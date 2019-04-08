@@ -8,4 +8,6 @@ export const CREATE_RABBIT = 'CREATE_RABBIT';
 
 export const REFACT_RABBIT = 'REFACT_RABBIT';
 
+export const DELETE_RABBIT = 'DELETE_RABBIT'
+
 

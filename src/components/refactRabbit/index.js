@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './style.css'
 import {connect} from "react-redux";
-import {token} from "../../selectors";
 import {refactSelectRabbit} from "../../action-creators";
 import {numbers} from '../../utils'
 
@@ -72,10 +71,10 @@ class RefactRabbit extends Component {
 
         evt.preventDefault();
 
-        const {refactSelectRabbit, tokenData, rabbit} = this.props;
+        const {refactSelectRabbit, rabbit} = this.props;
 
         if (this.state.name && this.state.weight) {
-            refactSelectRabbit(this.state, rabbit.id, tokenData);
+            refactSelectRabbit(this.state, rabbit.id);
         }
 
         this.setState({
@@ -88,8 +87,6 @@ class RefactRabbit extends Component {
 
 
 export default connect(
-    (store) => ({
-        tokenData: token(store),
-    }),
+    null,
     {refactSelectRabbit}
 )(RefactRabbit)

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './style.css';
 import {connect} from 'react-redux';
 import {createRabbit} from '../../action-creators';
-import {token} from "../../selectors";
 import {numbers} from '../../utils'
 
 class Creation extends Component {
@@ -69,10 +68,10 @@ class Creation extends Component {
 
         evt.preventDefault();
 
-        const {createRabbit, tokenData} = this.props;
+        const {createRabbit} = this.props;
 
         if (this.state.name && this.state.weight) {
-            createRabbit(this.state, tokenData);
+            createRabbit(this.state);
         }
 
         this.setState({
@@ -85,8 +84,6 @@ class Creation extends Component {
 
 
 export default connect(
-    (store) => ({
-        tokenData: token(store),
-    }),
+    null,
     {createRabbit}
 )(Creation)

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getRabbits} from '../../action-creators';
-import {token, rabbitsList, logIn} from '../../selectors';
+import {rabbitsList, logIn} from '../../selectors';
 import Rabbit from '../rabbit';
 import './style.css';
 
@@ -49,9 +49,9 @@ class CreationList extends Component {
     };
 
     onHandleClick = () => {
-        const {getRabbits, tokenData} = this.props;
+        const {getRabbits} = this.props;
 
-        getRabbits(tokenData);
+        getRabbits();
     };
 
 }
@@ -59,7 +59,6 @@ class CreationList extends Component {
 
 export default connect(
     (store) => ({
-        tokenData: token(store),
         rabbitsData: rabbitsList(store),
         log: logIn(store)
     }),
